@@ -20,6 +20,7 @@ def processor_d18(file_path):
     if mono:
         # this is the slowest part resampling
         sig, sr = librosa.load(file_path, sr=sr, mono=True)
+        IPython.display.Audio(data=sig, rate=sr)
         sig = sig[np.newaxis]
         
     else:
