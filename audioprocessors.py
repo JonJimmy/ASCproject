@@ -52,7 +52,7 @@ def processor_d18(file_path):
         # keep spectrogram
         spectrograms.append(np.asarray(spectrogram))
 
-    spectrograms = np.asarray(spectrograms, dtype=np.float32)
+    spectrograms = np.asarray(spectrograms, dtype=np.float16)
 
     return spectrograms,s1
 
