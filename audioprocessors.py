@@ -10,7 +10,7 @@ import math
 
 def processor_d18(file_path):
     n_fft = 2048  # 2048
-    sr = 22050  # 22050  # 44100  # 32000
+    sr = 44100  # 22050  # 44100  # 32000
     mono = True  #
     log_spec = False
     n_mels = 256
