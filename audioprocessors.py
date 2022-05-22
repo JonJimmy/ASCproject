@@ -20,7 +20,7 @@ def processor_d18(file_path):
     if mono:
         # this is the slowest part resampling
         sig, sr = librosa.load(file_path, sr=sr, mono=True)
-        IPython.display.Audio(data=sig, rate=sr)
+        s1 = sig.shape
         sig = sig[np.newaxis]
         
     else:
@@ -105,6 +105,6 @@ def processor_d18_stereo(file_path):
 
     spectrograms = np.asarray(spectrograms, dtype=np.float32)
 
-    return spectrograms
+    return spectrograms,s1
 
 
