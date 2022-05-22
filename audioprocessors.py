@@ -7,7 +7,7 @@ from scipy import signal
 import os
 
 
-def processor_d18(file_path):
+def processor_d18(file_path,x):
     n_fft = 2048  # 2048
     sr = 22050  # 22050  # 44100  # 32000
     mono = True  #
@@ -27,7 +27,8 @@ def processor_d18(file_path):
         # sig, sf_sr = sf.read(file_path)
         # sig = np.transpose(sig, (1, 0))
         # sig = np.asarray([librosa.resample(s, sf_sr, sr) for s in sig])
-    sig = sig1[0:55125]
+    t = 55125 * x
+    sig = sig1[0+t:55125+t]
     sig = sig[np.newaxis]
     spectrograms = []
     for y in sig:
