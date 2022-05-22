@@ -5,7 +5,8 @@ import soundfile as sf
 import librosa
 from scipy import signal
 import os
-
+from pydub import Audiosegment
+import math
 
 def processor_d18(file_path):
     n_fft = 2048  # 2048
@@ -16,11 +17,15 @@ def processor_d18(file_path):
 
     hop_length = 512
     fmax = None
-
+    t1 = 1000;
+    t2 = 3500
+    newAudio = AudioSegment.from_wav(file_path)
+    file_path = newAudio[t1:t2]
     if mono:
         # this is the slowest part resampling
         sig, sr = librosa.load(file_path, sr=sr, mono=True)
         sig = sig[np.newaxis]
+        
     else:
         sig, sr = librosa.load(file_path, sr=sr, mono=False)
         # sig, sf_sr = sf.read(file_path)
