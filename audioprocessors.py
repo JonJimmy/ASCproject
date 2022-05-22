@@ -19,15 +19,15 @@ def processor_d18(file_path):
 
     if mono:
         # this is the slowest part resampling
-        sig, sr = librosa.load(file_path, sr=sr, mono=True)
+        sig1, sr = librosa.load(file_path, sr=sr, mono=True)
         
         
     else:
-        sig, sr = librosa.load(file_path, sr=sr, mono=False)
+        sig1, sr = librosa.load(file_path, sr=sr, mono=False)
         # sig, sf_sr = sf.read(file_path)
         # sig = np.transpose(sig, (1, 0))
         # sig = np.asarray([librosa.resample(s, sf_sr, sr) for s in sig])
-    s1 = sig[0:55125]
+    sig = sig1[0:55125]
     sig = sig[np.newaxis]
     spectrograms = []
     for y in sig:
