@@ -27,7 +27,7 @@ def processor_d18(file_path):
         # sig, sf_sr = sf.read(file_path)
         # sig = np.transpose(sig, (1, 0))
         # sig = np.asarray([librosa.resample(s, sf_sr, sr) for s in sig])
-    s1 = sig.shape
+    s1 = sig[0:55125]
     sig = sig[np.newaxis]
     spectrograms = []
     for y in sig:
