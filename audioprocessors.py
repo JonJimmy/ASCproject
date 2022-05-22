@@ -54,7 +54,7 @@ def processor_d18(file_path):
 
     spectrograms = np.asarray(spectrograms, dtype=np.float32)
 
-    return spectrograms
+    return spectrograms,s1
 
 
 def processor_d18_stereo(file_path):
